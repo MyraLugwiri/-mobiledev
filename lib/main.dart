@@ -4,6 +4,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:navigation/splash.dart';
 import './secondScreen.dart';
 import './splash.dart';
+import 'grid.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -76,8 +77,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       builder: ((context) => secondScreen()),
                     ));
               }),
-              child: const Text('Go to next screen'),
+              child: const Text('Go to DataTable'),
             ),
+            const Divider(
+              height: 100,
+            ),
+            ElevatedButton(
+              onPressed: (() {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) => gridScreen()),
+                    ));
+              }),
+              child: const Text('Go to Grid'),
+            )
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
